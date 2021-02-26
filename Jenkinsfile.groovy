@@ -64,7 +64,7 @@ pipeline{
                 script{
                     last_started=env.STAGE_NAME
                 }
-                withSonarQubeEnv('sonarqube1'){
+                withSonarQubeEnv('sonarqube2'){
                     sh 'mvn sonar:sonar'
                 }
             }
@@ -90,7 +90,7 @@ pipeline{
                         "files":[
                             {
                               "pattern": "target/*.jar",
-                                "target": "art-doc-dev-local1"
+                                "target": "art-doc-dev-local2/school"
                              }
                         ]
                     }''',
@@ -107,7 +107,7 @@ pipeline{
                     spec: '''{
                         "files":[
                             {
-                              "pattern": "art-doc-dev-local1/",
+                              "pattern": "art-doc-dev-local2/school/",
                                  "target": "artifacts/"
                              }
                         ]
